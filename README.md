@@ -101,6 +101,12 @@ table and gets the limits, the blocklist and the 429. How, and how to handle 429
 [Operations](docs/operations.md) · [Endpoints for developers](docs/endpoints.md) ·
 [Compatibility](COMPATIBILITY.md) · [Changes](CHANGELOG.md)
 
+## Tested (as of 0.1.0)
+
+- **Automated tests:** 70 unit tests (unit tests run on every push); 75.6% line coverage by the unit tests.
+- **Install:** a fresh install of every CommerceKings package from GitHub on an empty Magento database, verified.
+- **Not tested:** end to end under real traffic (limits and the blocklist are tested by unit tests).
+
 ---
 
 **Need it installed, set up or customized?** **[Get in touch →](https://commercekings.net)**
