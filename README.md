@@ -103,4 +103,4 @@ table and gets the limits, the blocklist and the 429. How, and how to handle 429
 
 ---
 
-**Need help installing or setting it up?** **[Get a quote →](https://commercekings.net)**
+**Need it installed, set up or customized?** **[Get in touch →](https://commercekings.net)**
