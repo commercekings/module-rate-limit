@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.1.0 - 2026-10-19
 
 - Notification's address consent endpoint (`notification_address_consent`, guest and `/mine`) is listed, with a
   suggested limit of 10 per minute like sign-ups.
