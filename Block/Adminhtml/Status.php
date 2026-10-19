@@ -8,6 +8,7 @@ use Magento\Backend\Block\Template\Context;
 use Magento\Config\Block\System\Config\Form\Field;
 use Magento\Framework\App\Backpressure\SlidingWindow\RequestLoggerInterface;
 use Magento\Framework\App\DeploymentConfig;
+use Magento\Framework\App\Request\Http;
 use Magento\Framework\Data\Form\Element\AbstractElement;
 use Magento\Framework\HTTP\PhpEnvironment\RemoteAddress;
 
@@ -36,7 +37,8 @@ class Status extends Field
             )
             : __('No backpressure logger in app/etc/env.php: limits are off, blocked IP addresses still apply.');
         $html = '<div class="control-value">' . $this->escapeHtml((string)$message) . '</div>';
-        $raw = (string)$this->getRequest()->getServer('REMOTE_ADDR');
+        $request = $this->getRequest();
+        $raw = $request instanceof Http ? (string)$request->getServer('REMOTE_ADDR') : '';
         if (self::isForwarded((string)$this->remoteAddress->getRemoteAddress(), $raw)) {
             $html .= '<div class="message message-warning">' . $this->escapeHtml((string)__(
                 'Magento takes the visitor\'s address from a forwarded header. Make sure only your proxy can set it'
